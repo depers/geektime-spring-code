@@ -24,6 +24,7 @@ public class FooServiceImpl implements FooService {
     }
 
     @Override
+    //@Transactional(rollbackFor = RollbackException.class)
     public void invokeInsertThenRollback() throws RollbackException {
         insertThenRollback();
     }
