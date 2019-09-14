@@ -39,6 +39,7 @@ public class SpringBucksApplication implements ApplicationRunner {
 		return builder -> builder.readFrom(ReadFrom.MASTER_PREFERRED);
 	}
 
+	// 类型转换配置
 	@Bean
 	public RedisCustomConversions redisCustomConversions() {
 		return new RedisCustomConversions(
