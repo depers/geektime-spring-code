@@ -7,7 +7,9 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+// 声明一个切面
 @Aspect
+// 声明一个bean
 @Component
 @Slf4j
 public class PerformanceAspect {

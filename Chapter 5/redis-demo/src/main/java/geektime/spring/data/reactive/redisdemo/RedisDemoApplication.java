@@ -33,6 +33,7 @@ public class RedisDemoApplication implements ApplicationRunner {
         SpringApplication.run(RedisDemoApplication.class, args);
     }
 
+    // ReactiveRedisConnectionFactory 的实现类是LettuceConnectionFactory
     @Bean
     ReactiveStringRedisTemplate reactiveRedisTemplate(ReactiveRedisConnectionFactory factory) {
         return new ReactiveStringRedisTemplate(factory);

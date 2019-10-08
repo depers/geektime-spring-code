@@ -22,7 +22,7 @@ import java.util.Optional;
 @EnableTransactionManagement
 @SpringBootApplication
 @EnableJpaRepositories
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy  // 开启aop的支持
 public class SpringBucksApplication implements ApplicationRunner {
 	@Autowired
 	private CoffeeRepository coffeeRepository;

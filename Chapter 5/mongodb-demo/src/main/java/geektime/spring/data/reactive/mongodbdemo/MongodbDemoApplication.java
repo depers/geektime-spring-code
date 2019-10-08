@@ -46,6 +46,8 @@ public class MongodbDemoApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 //		startFromInsertion(() -> log.info("Runnable"));
+
+		// 这样写的好处就是应该先执行插入操作，然后才执行更新操作。
 		startFromInsertion(() -> {
 			log.info("Runnable");
 			decreaseHighPrice();
