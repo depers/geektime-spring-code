@@ -12,6 +12,7 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalControllerAdvice {
+
     @ExceptionHandler(ValidationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String, String> validationExceptionHandler(ValidationException exception) {

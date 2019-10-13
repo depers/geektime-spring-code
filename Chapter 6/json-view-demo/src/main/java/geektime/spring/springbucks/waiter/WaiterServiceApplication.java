@@ -22,6 +22,7 @@ public class WaiterServiceApplication {
 		return new Hibernate5Module();
 	}
 
+	// 输出的JSON就会有一个格式化的效果
 //	@Bean
 //	public Jackson2ObjectMapperBuilderCustomizer jacksonBuilderCustomizer() {
 //		return builder -> builder.indentOutput(true);

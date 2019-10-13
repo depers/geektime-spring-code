@@ -33,6 +33,10 @@ public class WaiterServiceApplication implements WebMvcConfigurer {
 		return new Hibernate5Module();
 	}
 
+	/**
+	 * json格式化输出和时区设置
+	 * @return
+	 */
 	@Bean
 	public Jackson2ObjectMapperBuilderCustomizer jacksonBuilderCustomizer() {
 		return builder -> {

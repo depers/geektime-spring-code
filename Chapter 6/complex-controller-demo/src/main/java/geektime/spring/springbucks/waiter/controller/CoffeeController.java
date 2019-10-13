@@ -20,6 +20,7 @@ public class CoffeeController {
     @Autowired
     private CoffeeService coffeeService;
 
+    // 不存在name参数是才会匹配上
     @GetMapping(path = "/", params = "!name")
     @ResponseBody
     public List<Coffee> getAll() {
