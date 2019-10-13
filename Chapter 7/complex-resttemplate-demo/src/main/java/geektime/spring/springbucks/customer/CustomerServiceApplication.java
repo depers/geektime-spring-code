@@ -24,6 +24,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.print.attribute.standard.Media;
 import java.math.BigDecimal;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
@@ -48,28 +49,33 @@ public class CustomerServiceApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		URI uri = UriComponentsBuilder
-				.fromUriString("http://localhost:8080/coffee/?name={name}")
-				.build("mocha");
-		RequestEntity<Void> req = RequestEntity.get(uri)
-				.accept(MediaType.APPLICATION_XML)
-				.build();
-		ResponseEntity<String> resp = restTemplate.exchange(req, String.class);
-		log.info("Response Status: {}, Response Headers: {}", resp.getStatusCode(), resp.getHeaders().toString());
-		log.info("Coffee: {}", resp.getBody());
+//		URI uri = UriComponentsBuilder
+//				.fromUriString("http://localhost:8080/coffee/?name={name}")
+//				.build("mocha");
+//		RequestEntity<Void> req = RequestEntity.get(uri)
+//				.accept(MediaType.APPLICATION_XML)
+//				.build();
+//		ResponseEntity<String> resp = restTemplate.exchange(req, String.class);
+//		log.info("Response Status: {}, Response Headers: {}", resp.getStatusCode(), resp.getHeaders().toString());
+//		log.info("Coffee: {}", resp.getBody());
 
 		String coffeeUri = "http://localhost:8080/coffee/";
-		Coffee request = Coffee.builder()
-				.name("Americano")
-				.price(Money.of(CurrencyUnit.of("CNY"), 25.00))
-				.build();
-		Coffee response = restTemplate.postForObject(coffeeUri, request, Coffee.class);
-		log.info("New Coffee: {}", response);
+//		Coffee request = Coffee.builder()
+//				.name("Americano")
+//				.price(Money.of(CurrencyUnit.of("CNY"), 25.00))
+//				.build();
+//		Coffee response = restTemplate.postForObject(coffeeUri, request, Coffee.class);
+//		log.info("New Coffee: {}", response);
+//
+//		ParameterizedTypeReference<List<Coffee>> ptr =
+//				new ParameterizedTypeReference<List<Coffee>>() {};
+//		ResponseEntity<List<Coffee>> list = restTemplate
+//				.exchange(coffeeUri, HttpMethod.GET, null, ptr);
+//		list.getBody().forEach(c -> log.info("Coffee: {}", c));
 
-		ParameterizedTypeReference<List<Coffee>> ptr =
-				new ParameterizedTypeReference<List<Coffee>>() {};
-		ResponseEntity<List<Coffee>> list = restTemplate
-				.exchange(coffeeUri, HttpMethod.GET, null, ptr);
-		list.getBody().forEach(c -> log.info("Coffee: {}", c));
+
+		List<Coffee> list1 = new ArrayList<>();
+		list1 = restTemplate.getForObject(coffeeUri, list1.getClass());
+		list1.forEach(c -> log.info("c：{}", c.getClass()));
 	}
 }
