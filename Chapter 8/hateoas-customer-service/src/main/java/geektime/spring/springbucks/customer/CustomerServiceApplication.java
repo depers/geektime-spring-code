@@ -30,6 +30,7 @@ public class CustomerServiceApplication {
 				.run(args);
 	}
 
+	// jackson就可以支持HAL
 	@Bean
 	public Jackson2HalModule jackson2HalModule() {
 		return new Jackson2HalModule();

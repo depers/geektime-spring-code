@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
+import org.springframework.hateoas.hal.Jackson2HalModule;
 
 import java.util.TimeZone;
 
@@ -20,6 +21,7 @@ public class WaiterServiceApplication {
 	public Hibernate5Module hibernate5Module() {
 		return new Hibernate5Module();
 	}
+
 
 	@Bean
 	public Jackson2ObjectMapperBuilderCustomizer jacksonBuilderCustomizer() {
