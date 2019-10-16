@@ -11,6 +11,7 @@ import org.springframework.util.ClassUtils;
 @Slf4j
 public class GreetingBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        // 判断类是否存在
         boolean hasClass = ClassUtils.isPresent("geektime.spring.hello.greeting.GreetingApplicationRunner",
                 GreetingBeanFactoryPostProcessor.class.getClassLoader());
         if (!hasClass) {
@@ -18,6 +19,7 @@ public class GreetingBeanFactoryPostProcessor implements BeanFactoryPostProcesso
             return;
         }
 
+        // 判断bean是否已经定义
         if (beanFactory.containsBeanDefinition("greetingApplicationRunner")) {
             log.info("We already have a greetingApplicationRunner bean registered.");
             return;
@@ -26,6 +28,7 @@ public class GreetingBeanFactoryPostProcessor implements BeanFactoryPostProcesso
         register(beanFactory);
     }
 
+    // 注册bean
     private void register(ConfigurableListableBeanFactory beanFactory) {
         if (beanFactory instanceof BeanDefinitionRegistry) {
             GenericBeanDefinition beanDefinition = new GenericBeanDefinition();

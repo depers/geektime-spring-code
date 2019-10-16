@@ -6,10 +6,13 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @Slf4j
+@PropertySource(value = "yapf.properties")
 public class PropertySourceDemoApplication implements ApplicationRunner {
+
 	@Value("${geektime.greeting}")
 	private String greeting;
 
