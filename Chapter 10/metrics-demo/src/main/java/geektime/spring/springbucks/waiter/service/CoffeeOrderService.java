@@ -19,6 +19,7 @@ import java.util.Arrays;
 @Transactional
 @Slf4j
 public class CoffeeOrderService implements MeterBinder {
+
     @Autowired
     private CoffeeOrderRepository orderRepository;
 

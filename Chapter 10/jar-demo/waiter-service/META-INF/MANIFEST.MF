@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven 3.6.0
+Built-By: digitalsonic
+Build-Jdk: 11.0.1
+Implementation-Title: waiter-service
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: geektime.spring.springbucks
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/waiter-service
+Main-Class: org.springframework.boot.loader.JarLauncher
+Start-Class: geektime.spring.springbucks.waiter.WaiterServiceApplication
+Spring-Boot-Version: 2.1.3.RELEASE
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+
