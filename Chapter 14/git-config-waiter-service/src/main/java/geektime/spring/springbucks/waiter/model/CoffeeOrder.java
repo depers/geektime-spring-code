@@ -36,9 +36,12 @@ public class CoffeeOrder extends BaseEntity implements Serializable {
     @Enumerated
     @Column(nullable = false)
     private OrderState state;
+    // 折扣
     private Integer discount;
     @Type(type = "org.jadira.usertype.moneyandcurrency.joda.PersistentMoneyMinorAmount",
             parameters = {@org.hibernate.annotations.Parameter(name = "currencyCode", value = "CNY")})
+    // 总计金额
     private Money total;
+    // 服务员姓名
     private String waiter;
 }

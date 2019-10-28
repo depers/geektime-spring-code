@@ -42,10 +42,13 @@ public class CoffeeOrderService implements MeterBinder {
         CoffeeOrder order = CoffeeOrder.builder()
                 .customer(customer)
                 .items(new ArrayList<>(Arrays.asList(coffee)))
+                // 折扣
                 .discount(orderProperties.getDiscount())
+                // 总金额
                 .total(calcTotal(coffee))
                 .state(OrderState.INIT)
-                .waiter(orderProperties.getWaiterPrefix() + waiterId)
+                // 服务员
+                .waiter(orderProperties.getWaiterProfix() + waiterId)
                 .build();
         CoffeeOrder saved = orderRepository.save(order);
         log.info("New Order: {}", saved);
