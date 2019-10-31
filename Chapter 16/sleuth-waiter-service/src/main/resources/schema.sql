@@ -8,7 +8,7 @@ drop table if exists t_order_coffee;
 create table t_coffee (
     id bigint auto_increment,
     create_time timestamp,
-    update_time timestamp,
+    update_time timestamp DEFAULT CURRENT_TIMESTAMP,
     name varchar(255),
     price bigint,
     primary key (id)
@@ -17,7 +17,7 @@ create table t_coffee (
 create table t_order (
     id bigint auto_increment,
     create_time timestamp,
-    update_time timestamp,
+    update_time timestamp DEFAULT CURRENT_TIMESTAMP,
     customer varchar(255),
     waiter varchar(255),
     barista varchar(255),
